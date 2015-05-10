@@ -19,6 +19,10 @@ $app->register(new Silex\Provider\MonologServiceProvider(), array(
   'monolog.logfile' => 'php://stderr',
 ));
 
+$app->register(new JDesrosiers\Silex\Provider\CorsServiceProvider(), array(
+    "cors.allowOrigin" => "*",
+));
+
 $app->get('/', function() {
   return new Response('Pusher PHP Auth Test', 200);
 });
@@ -33,6 +37,7 @@ $app->post('/', function (Request $request) {
   return $jsonResponse;
 });
 
+$app->after($app['cors']);
 $app->run();
 
 ?>
