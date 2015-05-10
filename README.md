@@ -1,8 +1,21 @@
 # Pusher Channel Authentication example using the PHP Silex Framework
 
-An example of to authenticating Pusher private channel subscriptions using the PHP [Silex](http://silex.sensiolabs.org/) framework.
+An example using Pusher with the [Silex](http://silex.sensiolabs.org/) PHP framework.
 
 It was built upon the [Getting Started with PHP on Heroku](https://devcenter.heroku.com/articles/getting-started-with-php) example.
+
+## Contents
+
+The code in this repository provides examples of how to:
+
+* Trigger Events
+* Authenticate Private Channel Subscriptions
+
+## Todo
+
+* Authenticating Presence Channel Subscriptions
+* Get a list of channels from the Pusher HTTP API
+* Handle incoming WebHooks
 
 ## Running Locally
 
@@ -29,6 +42,7 @@ $ heroku open
 
 For more information on authenticating Pusher channel subscription see:
 
+- [Triggering Events](https://pusher.com/docs/server_api_guide/interact_rest_api#publishing-events)
 - [Implementing Private Authentication Endpoints](https://pusher.com/docs/authenticating_users#implementing_private_endpoints)
 - [Implementing Presence Authentication Endpoints](https://pusher.com/docs/authenticating_users#implementing_private_endpoints)
 
