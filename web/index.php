@@ -13,6 +13,8 @@ $app->register(new Silex\Provider\MonologServiceProvider(), array(
   'monolog.logfile' => 'php://stderr',
 ));
 
+// By default allow CORS from all domains
+// Change/remove this if CORS is not wanted
 $app->register(new JDesrosiers\Silex\Provider\CorsServiceProvider(), array(
     "cors.allowOrigin" => "*",
 ));
@@ -44,7 +46,9 @@ $app->get('/', function() {
   return new Response('Pusher PHP Auth Test', 200);
 });
 
-$app->post('/', function (Request $request) use($app, $pusher) {
+$app->post('/', function (Request $request) use($pusher) {
+  // Authenticate all private channels by default.
+  // Add user authentication if this is in production
   $channel_name = $request->get('channel_name');
   $socket_id = $request->get('socket_id');
 
@@ -52,7 +56,7 @@ $app->post('/', function (Request $request) use($app, $pusher) {
   return new Response($auth, 200);
 });
 
+// Remove this if CORS is not wanted
 $app->after($app['cors']);
-$app->run();
 
-?>
+$app->run();
