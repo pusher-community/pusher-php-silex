@@ -62,7 +62,7 @@ $app->post('/trigger', function(Request $request) use($pusher) {
 });
 
 // Authenticate Private Channel Subscriptions
-$app->post('/', function (Request $request) use($pusher) {
+$app->post('/private-auth', function (Request $request) use($pusher) {
   // Authenticate all private channels by default.
   // Add user authentication if this is in production
   $channel_name = $request->get('channel_name');
