@@ -1,6 +1,6 @@
 # Pusher Channel Authentication example using the PHP Silex Framework
 
-An example using Pusher with the [Silex](http://silex.sensiolabs.org/) PHP framework.
+An example using Pusher with the [Silex](http://silex.sensiolabs.org/) PHP framework. The examples make use of the [Pusher PHP library](https://github.com/pusher/pusher-http-php).
 
 It was built upon the [Getting Started with PHP on Heroku](https://devcenter.heroku.com/articles/getting-started-with-php) example.
 
