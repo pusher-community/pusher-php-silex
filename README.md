@@ -11,6 +11,8 @@ The code in this repository provides examples of how to:
 * Trigger Events
 * Authenticate Private Channel Subscriptions
 
+All the code can be found in [web/index.php](web/index.php).
+
 ## Todo
 
 * Authenticating Presence Channel Subscriptions
