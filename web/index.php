@@ -48,7 +48,7 @@ $app->get('/', function() {
   return new Response('Pusher PHP Auth Test', 200);
 });
 
-// Trigger and event
+// Trigger an event
 $app->post('/trigger', function(Request $request) use($pusher) {
   // channel, event name and data payload should all be
   // changed to suit your application needs.
