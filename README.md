@@ -1,16 +1,16 @@
-# php-getting-started
+# Pusher Channel Authentication example using the PHP Silex Framework
 
-A barebones PHP app that makes use of the [Silex](http://silex.sensiolabs.org/) web framework, which can easily be deployed to Heroku.
+An example of to authenticating Pusher private channel subscriptions using the PHP [Silex](http://silex.sensiolabs.org/) framework.
 
-This application supports the [Getting Started with PHP on Heroku](https://devcenter.heroku.com/articles/getting-started-with-php) article - check it out.
+It was built upon the [Getting Started with PHP on Heroku](https://devcenter.heroku.com/articles/getting-started-with-php) example.
 
 ## Running Locally
 
 Make sure you have PHP, Apache and Composer installed.  Also, install the [Heroku Toolbelt](https://toolbelt.heroku.com/).
 
 ```sh
-$ git clone git@github.com:heroku/php-getting-started.git # or clone your own fork
-$ cd php-getting-started
+$ git clone git@github.com:pusher/pusher-php-silex-auth.git # or clone your own fork
+$ cd pusher-php-silex-auth
 $ composer update
 $ foreman start web
 ```
@@ -26,6 +26,11 @@ $ heroku open
 ```
 
 ## Documentation
+
+For more information on authenticating Pusher channel subscription see:
+
+- [Implementing Private Authentication Endpoints](https://pusher.com/docs/authenticating_users#implementing_private_endpoints)
+- [Implementing Presence Authentication Endpoints](https://pusher.com/docs/authenticating_users#implementing_private_endpoints)
 
 For more information about using PHP on Heroku, see these Dev Center articles:
 
