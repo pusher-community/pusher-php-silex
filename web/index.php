@@ -59,6 +59,8 @@ $app->post('/trigger', function(Request $request) use($pusher) {
   $excludeSocketId = $request->get('socket_id');
   
   $pusher->trigger($channelName, $eventName, $eventData, $excludeSocketId);
+  
+  return new Response('{"trigger_success": "true"}', 200);
 });
 
 // Authenticate Private Channel Subscriptions
