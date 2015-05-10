@@ -44,7 +44,7 @@ $app->get('/', function() {
   return new Response('Pusher PHP Auth Test', 200);
 });
 
-$app->post('/', function (Request $request) {
+$app->post('/', function (Request $request) use($pusher) {
   $channel_name = $request->get('channel_name');
   $socket_id = $request->get('socket_id');
 
