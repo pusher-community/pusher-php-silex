@@ -19,6 +19,9 @@ $app->register(new Silex\Provider\MonologServiceProvider(), array(
   'monolog.logfile' => 'php://stderr',
 ));
 
+$app->get('/', function() {
+  return new Response('Pusher PHP Auth Test', 200);
+});
 
 $app->post('/', function (Request $request) {
   $channel_name = $request->get('channel_name');
