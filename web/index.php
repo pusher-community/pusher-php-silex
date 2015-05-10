@@ -42,10 +42,26 @@ $pusher->set_logger( $pusherMonoLogger );
 $pusherMonoLogger->log($pusher);
 
 // Routes
+
+// Default route to prove things are working
 $app->get('/', function() {
   return new Response('Pusher PHP Auth Test', 200);
 });
 
+// Trigger and event
+$app->post('/trigger', function(Request $request) use($pusher) {
+  // channel, event name and data payload should all be
+  // changed to suit your application needs.
+  // If taking data from the posted request be sure to validate and sanitize
+  $channelName = 'test_channel';
+  $eventName = 'test_event';
+  $eventData = array('hello' => 'world');
+  $excludeSocketId = $request->get('socket_id');
+  
+  $pusher->trigger($channelName, $eventName, $eventData, $excludeSocketId);
+});
+
+// Authenticate Private Channel Subscriptions
 $app->post('/', function (Request $request) use($pusher) {
   // Authenticate all private channels by default.
   // Add user authentication if this is in production
