@@ -49,9 +49,7 @@ $app->post('/', function (Request $request) use($app, $pusher) {
   $socket_id = $request->get('socket_id');
 
   $auth = $pusher->socket_auth($channel_name, $socket_id);
-
-  $jsonResponse = $app->json($auth, 200);
-  return $jsonResponse;
+  return new Response($auth, 200);
 });
 
 $app->after($app['cors']);
