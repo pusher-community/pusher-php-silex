@@ -31,7 +31,7 @@ class PusherMonoLogger {
   }
   
   public function log( $msg ) {
-    $this->monolog->addDebug(print_r($msg));
+    $this->monolog->addDebug(print_r($msg, true));
   }
 }
 
